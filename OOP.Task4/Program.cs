@@ -5,11 +5,11 @@ namespace OOP.Task4
 {
     class Program
     {
-        static string Input { get; set; }
+        static string Inputt { get; set; }
 
            Program()
            {
-               Input = Program.InputAndValidation();
+               Inputt = Program.InputAndValidation();
            }
         static bool IsPalindrome(string s)
         {
@@ -31,9 +31,9 @@ namespace OOP.Task4
 
                 Console.WriteLine("Введите слово");
 
-                Input = Console.ReadLine();
+                Inputt = Console.ReadLine();
 
-                MatchCollection matches = regex.Matches(Input);
+                MatchCollection matches = regex.Matches(Inputt);
 
                 if (matches.Count > 0)
                 {
@@ -41,27 +41,27 @@ namespace OOP.Task4
                 }
                 else
                 {
-                    Input.ToCharArray();
+                    Inputt.ToCharArray();
 
-                    char temp = Input[0];
+                    char temp = Inputt[0];
                     int count = 0;
 
 
-                    for (int i = 0; i < Input.Length - 1; i++)
+                    for (int i = 0; i < Inputt.Length - 1; i++)
                     {
-                        if (Input[i + 1] == temp)
+                        if (Inputt[i + 1] == temp)
                         {
                             count++;
                         }
                     }
 
-                    if (Input.Length < 3)
+                    if (Inputt.Length < 3)
                     {
                         Console.WriteLine("Введите слово состоящее из трех и более букв");
                     }
-                    else if (count != Input.Length - 1)
+                    else if (count != Inputt.Length - 1)
                     {
-                        if (IsPalindrome(Input) == true)
+                        if (IsPalindrome(Inputt) == true)
                         {
                             Console.WriteLine("Это полиндром");
                         }
@@ -78,7 +78,7 @@ namespace OOP.Task4
                     }
                 }
             }
-            return Input;
+            return Inputt;
         }
 
         static void Main(string[] args)
