@@ -44,14 +44,14 @@ namespace OOP.Task4
                     Input.ToCharArray();
 
                     char temp = Input[0];
-                    int counter = 0;
+                    int count = 0;
 
 
                     for (int i = 0; i < Input.Length - 1; i++)
                     {
                         if (Input[i + 1] == temp)
                         {
-                            counter++;
+                            count++;
                         }
                     }
 
@@ -59,7 +59,7 @@ namespace OOP.Task4
                     {
                         Console.WriteLine("Введите слово состоящее из трех и более букв");
                     }
-                    else if (counter != Input.Length - 1)
+                    else if (count != Input.Length - 1)
                     {
                         if (IsPalindrome(Input) == true)
                         {
