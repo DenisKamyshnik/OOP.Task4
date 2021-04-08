@@ -5,13 +5,13 @@ namespace OOP.Task4
 {
     class Program
     {
-        static string Inputt { get; set; }
+      public static string Input { get; set; }
 
            Program()
            {
-               Inputt = Program.InputAndValidation();
+               Input = Program.InputAndValidation();
            }
-        static bool IsPalindrome(string s)
+      public static bool IsPalindrome(string s)
         {
             int i = 0, j = s.Length - 1;
             while (i < j)
@@ -21,7 +21,7 @@ namespace OOP.Task4
             return true;
         }
 
-        static string InputAndValidation()
+     public static string InputAndValidation()
         {
             Regex regex = new Regex("^[ -/:-@[-`|{-}0-9]");
 
@@ -31,9 +31,9 @@ namespace OOP.Task4
 
                 Console.WriteLine("Введите слово");
 
-                Inputt = Console.ReadLine();
+                Input = Console.ReadLine();
 
-                MatchCollection matches = regex.Matches(Inputt);
+                MatchCollection matches = regex.Matches(Input);
 
                 if (matches.Count > 0)
                 {
@@ -41,27 +41,27 @@ namespace OOP.Task4
                 }
                 else
                 {
-                    Inputt.ToCharArray();
+                    Input.ToCharArray();
 
-                    char temp = Inputt[0];
+                    char temp = Input[0];
                     int count = 0;
 
 
-                    for (int i = 0; i < Inputt.Length - 1; i++)
+                    for (int i = 0; i < Input.Length - 1; i++)
                     {
-                        if (Inputt[i + 1] == temp)
+                        if (Input[i + 1] == temp)
                         {
                             count++;
                         }
                     }
 
-                    if (Inputt.Length < 3)
+                    if (Input.Length < 3)
                     {
                         Console.WriteLine("Введите слово состоящее из трех и более букв");
                     }
-                    else if (count != Inputt.Length - 1)
+                    else if (count != Input.Length - 1)
                     {
-                        if (IsPalindrome(Inputt) == true)
+                        if (IsPalindrome(Input) == true)
                         {
                             Console.WriteLine("Это полиндром");
                         }
@@ -78,7 +78,7 @@ namespace OOP.Task4
                     }
                 }
             }
-            return Inputt;
+            return Input;
         }
 
         static void Main(string[] args)
